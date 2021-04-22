@@ -4,9 +4,9 @@ var Post = require("../models/posts");
 var Story = require("../models/stories");
 var middleware = require("../middleware");
 
-//INDEX - show all campgrounds
+//INDEX - show all categories
 router.get("/", function(req, res){
-    // Get all campgrounds from DB
+    // Get all categories from DB
     Post.find({}, function(err, allPosts){
        if(err){
            console.log(err);

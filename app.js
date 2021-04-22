@@ -78,10 +78,10 @@ app.use("/stories", storyRoutes);
 
 //----------------------------
 // server listen
-app.listen(3000, function(req, res) {
-    console.log("Stories App server has started!");
-});
-// app.listen(process.env.PORT, process.env.IP, function(){
+// app.listen(3000, function(req, res) {
 //     console.log("Stories App server has started!");
 // });
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("Stories App server has started!");
+});
 //----------------------------

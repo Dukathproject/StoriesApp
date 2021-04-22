@@ -1,16 +1,16 @@
 var express = require("express");
 var router  = express.Router();
-var Recipe = require("../models/stories");
+var Story = require("../models/stories");
 var middleware = require("../middleware");
 
-//INDEX - show all recipes
+//INDEX - show all stories
 router.get("/", function(req, res){
     // Get all recipes from DB
     Story.find({}, function(err, allStories){
        if(err){
            console.log(err);
        } else {
-          res.render("posts/index",{recipes:allStories});
+          res.render("posts/index",{stories:allStories});
        }
     });
 });

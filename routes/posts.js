@@ -51,11 +51,11 @@ router.get("/:id", function(req, res){
         if(err){
             console.log(err);
         } else {
-            Recipe.find({}, function(err, allStories){
+            Story.find({}, function(err, allStories){
                 if(err){
                     console.log(err);
                 } else {
-                    res.render("posts/show", {post: foundPost, recipe: allStories});
+                    res.render("posts/show", {post: foundPost, story: allStories});
                 }
             });
         } 
@@ -84,7 +84,7 @@ router.put("/:id", middleware.checkPostOwnership, function(req, res){
     });
 });
 
-//DESTROY CAMPGROUND ROUTE
+//DESTROY CATEGORIE ROUTE
 router.delete("/:id", middleware.checkPostOwnership, function(req, res){
     Post.findByIdAndRemove(req.params.id, function(err){
         if(err){

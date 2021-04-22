@@ -10,10 +10,10 @@ var express           = require("express"),
     Post              = require("./models/posts"),
 //  Comment           = require("./models/comment"),
     User              = require("./models/user"),
-    Recipe            = require("./models/stories"),
+    Story            = require("./models/stories"),
 //  commentRoutes     = require("./routes/comments"),
     postRoutes        = require("./routes/posts"),
-    recipeRoutes      = require("./routes/stories"),
+    storyRoutes      = require("./routes/stories"),
     indexRoutes       = require("./routes/index");
 //----------------------------
 
@@ -73,15 +73,15 @@ app.use(function(req, res, next){
 app.use("/", indexRoutes);
 //app.use("/posts/:id/comments", commentRoutes);
 app.use("/posts", postRoutes);
-app.use("/recipes", recipeRoutes);
+app.use("/stories", storyRoutes);
 //----------------------------
 
 //----------------------------
 // server listen
-// app.listen(3000, function(req, res) {
-//     console.log("Stories App server has started!");
-// });
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(3000, function(req, res) {
     console.log("Stories App server has started!");
 });
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("Stories App server has started!");
+// });
 //----------------------------

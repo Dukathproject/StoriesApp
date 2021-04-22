@@ -1,7 +1,7 @@
 var express = require("express");
 var router  = express.Router();
 var Post = require("../models/posts");
-var Recipe = require("../models/recipes");
+var Story = require("../models/stories");
 var middleware = require("../middleware");
 
 //INDEX - show all campgrounds
@@ -51,11 +51,11 @@ router.get("/:id", function(req, res){
         if(err){
             console.log(err);
         } else {
-            Recipe.find({}, function(err, allRecipes){
+            Recipe.find({}, function(err, allStories){
                 if(err){
                     console.log(err);
                 } else {
-                    res.render("posts/show", {post: foundPost, recipe: allRecipes});
+                    res.render("posts/show", {post: foundPost, recipe: allStories});
                 }
             });
         } 
